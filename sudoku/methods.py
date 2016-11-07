@@ -12,8 +12,8 @@ class Manager:
     self.bs = basic_py_instance
     
   # *** tranzit method (sudoku.py <--> matrix.py)
-  def new_board(self, arr):
-    return Zweiboard(arr)
+  def new_board(self, arr = [], shd = []):
+    return Zweiboard(arr, shd)
 
   # *** initial setting of shadows after loading new desk
   def initial_reduce(self, imp):

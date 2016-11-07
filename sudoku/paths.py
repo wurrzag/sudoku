@@ -1,5 +1,5 @@
 from . import methods # sudoku candidates reducing methods
-from .matrix import Stack_of_boards # list of valid boards as a returning value of program
+from .matrix import Stack_of_boards
 
 HIDDEN_QUADS = False # whether to include hidden quads into main analysis or not. hidden quads have extremely low chance of being efficient an it is approximatelly 2x slower than hidden triples so this switch is rated 'experimental'
 
@@ -31,19 +31,22 @@ class Manager():
   # brute force method in case single full_analysis() did not finish the job
   def try_branches(self, imp):
     def try_branches_loop():                    # parent method assures this method is called only with nonzero 'todo_list'
-      actual = todo_list.get()                  # take the last item and work with it
+      act = todo_list.pop(); actual = self.meth.new_board(act.bd, act.sh) # take the last item and work with it
       where = self.choose_proper_field(actual)  # the most advantageous field to continue from  #[row, col, shadow]
       for candidate in where[2]:                # for every one number in shadow of chosen field
         path = actual.write(where[0], where[1], int(candidate)) # fill the field with this one number
         path = self.full_analysis(path); value = self.bs.validity_test(path) # make the full analysis and check how well it worked
-        if value == 'properly finished board': result.add(path.__class__(path.board, path.shadow)) # valid answer means: remember that for later
-        elif value == 'unfinished board': todo_list.add(path.__class__(path.board, path.shadow))   # if there is work to do left, continue working
+        if value == 'properly finished board': result.push(path.get_board(), path.get_shadow()) # valid answer means: remember that for later
+        elif value == 'unfinished board': todo_list.push(path.get_board(), path.get_shadow())    # if there is work to do left, continue working
         elif value == 'wrong board': continue   # wrong answer means do nothing aka don't continue this branch
       
     todo_list = Stack_of_boards(); result = Stack_of_boards()
-    todo_list.add(imp.__class__(imp.board, imp.shadow))
+    todo_list.push(imp.get_board(), imp.get_shadow())
     while(todo_list.length()): try_branches_loop()
-    return result
+    
+    res = []
+    for i in range(result.length()): res.append(result.pop().bd)
+    return res
 
   # *** choose proper field - determine the point from where to continue the analysis of future (whatever field needs to be filled with one of now-possible candidates by the end of program so one field is enough to continue)
   def choose_proper_field(self, imp):
