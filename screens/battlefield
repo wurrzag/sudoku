@@ -1,0 +1,67 @@
+COLOR w
+0105  text battlefield
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#1010g button_3
+
+#0526v h-line 05
+#0626b v-line 08
+
+#COLOR b
+#0440  h-double-line 07br
+#0439  v-double-line 07br
+#0340  h-double-line 07gr
+#0437  v-double-line 07gr
+#0237  h-double-line 07gb
+#0435  v-double-line 07gb
+#1518r corner-Tl
+#1050v arrow-r 12
+#1050v arrow-l 12
+#1050v arrow-u 02
+#1050v arrow-d 12
+
+

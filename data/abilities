@@ -1,0 +1,68 @@
+automatic: this skill is used automatically
+worker At the end of every turn if worker is in countryside and he didn't move this turn, he earns you one primary and one secondary goodie (wood, gold, food) and one more primary goodie if he is in his native grounds
+engineer At the end of every turn if worker is in countryside and he didn't move this turn, he earns you two primary and one secondary goodie (wood, gold, food)
+hillbilly One free movement in forested hills. Invisibility in forested hills. Currently invisible units cannot acquire territory
+redneck One free movement in forested hills. Invisibility in forested hills. Can acquire territory
+swimmer Invisible in swampy river. Currently invisible units cannot acquire territory
+fish Can move only in swampy river and bases. Invisible to all except scouts in swampy river
+stalker One free movement in swampy river. Invisibility in swampy river. Currently invisible units cannot acquire territory
+gollum One free movement in swampy river. Invisibility in swampy river. Can acquire territory
+rider One free movement in plains. Strong attack bonus on plains and swampy river but only if free movement was already spent
+postman One free movement in plains. Strong attack bonus on plains and swampy river but only if free movement was already spent. Invisible in plains
+firststrike Attack first in every melee combat
+monk Attack before firststrikes in every melee combat
+slowstrike Attacks second in every melee combat
+retarded Attacks after secondstrikes in every melee combat
+flying Can fly over enemy without the need of engaging the combat. Cannot be attacked by ground units except for shooters. DOES engage in combat if voluntarily ends his movement at enemy-occupied sector
+ace Can fly over enemy without the need of engaging the combat. Cannot be attacked by ground units except for shooters.
+haste Can act and travel immediately after summoning
+frantic Can act and travel immediately after summoning. Have a +2 movement first round in the game
+defender Can defend even after moving (unit is still 'moved' for all the other checks)
+vigilance Can defend even after moving (unit is still 'moved' for all the other checks)
+trample Deals extra damage to all enemy creatures in given sector if successes in killing his primary enemy
+crusher Deals extra damage to all enemy creatures in given sector if successes in killing his primary enemy
+wallcrusher Crushes the walls really fast
+aladdin Crushes the walls really really fast
+provoke Allways wins the initiative check, even against shooters and 'unmoved' defenders. Provoking creature can allways choose his target
+peacekeeper Allways wins the initiative check, even against shooters and 'unmoved' defenders. Provoking creature can allways choose his target
+flanking Have a combat bonus if outnumbered
+chariot Have a major combat bonus if outnumbered
+immune Immune to magic (spell vanishes if targeting this creature). Cannot be equipped
+hexproof Immune to magic (spell vanishes if targeting this creature). Can be equipped
+fear At the end of every combat all enemy survivors must success in check against desertion, otherwise they vanish away. The more the unit is wounded the more vulnerable to desertion it is
+panic At the end of every combat all enemy survivors must success in check against desertion, otherwise they vanish away. The more the unit is wounded the more vulnerable to desertion it is
+carrier Prevents engaged enemy from healing
+poisonous Poisons engaged enemy
+ill cannot heal
+poisoned cannot heal and lose some hp each turn
+marksman Doesn't have a penalty for aiming cornered sectors as a taget of shooting attack. 50% smaller penalty for longer distance.
+sniper Doesn't have a penalty for distance at all. 50% smaller forrested hills coverage penalty
+healer Gives healing bonus to all friends in the same sector
+shaman Gives healing bonus to all friends in the same sector. Removes the 'ill' and 'poisoned' effects for friends in the same sector
+decoy prevents himself and one enemy from engaging in combat. The ability is mandatory to use and it comes even before the shooting phase
+hannibal prevents himself and one enemy from engaging in combat. The ability is mandatory to use and it comes even before the shooting phase
+thrower Throwing attack at the beginning of melee duel. Can engage flying creature
+aimer Strong throwing attack at the beginning of melee duel. Can engage flying creatures
+caster 25% stronger spells. Allows player to cast instants in given sector.
+wizard 50% stronger spells. Allows player to cast instants in given sector.
+scout Can detect everyone in given area (wilderness or one of bases)
+ranger Can detect everyone on the whole battlefield
+coward Can flee from the fight.
+rat Can flee from the fight. Have a 1 free movement this turn
+visionary Adds +1 mana bonus to every land search feature supported by mana this turn if unmoved or at the base.
+prophet Doubles mana bonus to every land search feature supported by mana this turn if unmoved or at the base.
+spy Invisible in enemy base. Small debuff for the strongest enemy in fight (with a friendly unit)
+greema Invisible in enemy base. Debuff for the strongest enemy in fight (with a friendly unit)
+mentat Invisible in home base. Small debuff for the strongest enemy in fight (with a friendly unit)
+piter Invisible in home base. Debuff for the strongest enemy in fight (with a friendly unit)
+smith Stronger buildings
+builder Much stronger buildings
+leader +0 / +1 bonus to all subtype sharing friends of given sector
+sergeant +1 / +1 bonus to all subtype sharing friends of given sector
+commander +0 / +1 bonus to all subtype sharing friends in given area (wilderness or one of bases)
+general +1 / +1 bonus to all subtype sharing friends in given area (wilderness or one of bases)
+ghoul resurrect unit killed (at least partially) by this unit. Doesn't work if there are four friendly units in field
+unsummon returns unit to it's owner hands
+buff increase attack and/or defense for this fight
+regen regenerates creature to half of its hitpoints
+heal heals all friends in given sector (a bit)

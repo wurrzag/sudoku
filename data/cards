@@ -1,0 +1,204 @@
+
+# CARD TYPES:
+# creature, sorcery, instant, interrupt, building, armor, weapon, spell, wall, hero
+# c         s        i        r          b         a      z       x      w     h
+#
+# abilities:
+# worker, native-walk, firststrike, slowstrike, flying, haste, vigilance, trample,
+# z       n            j            k           f       h      v          t        
+#
+# wall-crusher, provoke, flanking, immune (to magic), fear, poisonous, sniper, healer, decoy
+# w             p        l         i                  g     q          s       x       d    
+#
+# thrown, caster, scout, flee, rampart, spy, mentat, builder, leader, commander, ill
+# o       c       u      e     r        y    m       b        1-2     3-4        a
+#
+#
+# MANACOST: r,g,u,b,w = red, green, blue, black, white
+#           x         = colorless
+#           f, s, p   = 5x wood, 5x gold, 5x food               (derived from 'f'orest, 's'wamp and 'p'lain as home terrains of those)
+#           big letter is two of them. there can be spaces in between
+#           'rXx   SSSSS' means 1 red, 3 colorless and 50 gold
+#           t or T    = 'tapping' as a part of manacost         (of creature type cards special effect), means 'loose all movement' and cannot be done after the unit has already moved
+#
+#
+# ARMOR, WEAPON, SPELL:
+# a d s m o l h = decrease attack, defense, movement, shooting, morale, life, hp
+# A D S M O L H = increase attack, defense, movement, shooting, morale, life, hp
+# X{}, x{}      = get or remove all abilities from list
+# ;             = special effect
+#                 healing effect ('H') is executed after engage if unit is healthy at the beginning of engage
+#
+#
+# SPECIAL EFFECT
+# ;A$ ,name = A:area of effect, $:manacost, name:id_string of given ability
+#             manacost can be empty but '.' must be there. the 'A' always must be there
+#             spell type of cards have always manacost of special effect ignored, because their regular manacost is valid
+#             so manacost of special effect is there only for creature cards with them
+#
+# AREA OF EFFECT:
+# a = self
+# b = chosen friend
+# c = all friends
+# x = engaged enemy
+# y = chosen enemy
+# z = all enemies
+# o = special area of effect, triggered in the program by keyword itself (spells will not have this, only special abilities of units)
+#
+# 'self' and 'engaged enemy' are executed at the beginning of engage
+# the rest is executed at the very start of the whole combat phase
+# ALL 'spell' types of effects targets or can target only units in the same field as the caster is
+# special abilities of creatures might have apecial area of effect, triggered in the program by keyword itself
+ 
+ 
+ 
+
+
+cg             .51101                                 .Llanovar elf .elf       .nzabcd
+#type+manacost .life-attack-defense-shooting-movement .name         .sub-type (.abilities) (;special abilities)
+#              .use a-j for 10-19 and A-J for 20-29
+ 
+ 
+cg  .51122.Fyndhorn elf.elf.n;oWt,ghoul
+cgx .a2202.Grizzly bears.bear
+cG  .81122.Elven scout.elf.nu
+cGg .a1132.Elven sniper.elf.ns
+cGx .b2202.Elvish infantry.elf
+cGX .d2422.Elvish veterans.elf
+cgx .81103.Sprite.elf.f
+cGXx.f5302.Krosan tusker.beast
+cGGX.f5302.Krosan berserker.beast.tp
+
+cu  .a1102.Merfolk soldier.merfolk.n
+cux .81102.Merfolk trader.merfolk.nz
+cux .b1301.Giant crab.octopus
+cuX .b1501.Giant turtle.octopus.2
+cu  .81103.Gray eagle.bird.f
+cU  .a2103.Sea hawk.bird.f1
+cux .81203.Albatros.bird.fv
+cUX .a2203.Angry bird.bird.fvshij
+cUuX.a2104.Toxic faerie.bird.fq
+
+cw  .a1101.Swordsman.soldier.v
+cw  .90101.Combat medic.soldier.o
+cwx .91202.Banner bearer.soldier.dn
+cW  .a1202.Master decoy.soldier.dn
+cwx .a1201.Swordsman elite.soldier.v
+cw  .71101.Slinger.hobbit.s
+cwx .a0121.Bowman.soldier
+cW  .a0121.Longbowman.soldier.s
+cWx .a2202.Silver knight.knight.1v
+cW  .a2202.White knight.knight
+cWux.a2222.Shadow knight.knight.nv
+cWX .a2303.Gepard rider.knight.1n
+cWwx.a3302.Veteran knight.knight.1
+
+cr  .51102.Goblin scout.goblin.nh
+cr  .71102.Gray goblin.goblin.n
+cr  .71102.Green goblin.goblin.n
+cR  .82202.Goblin hero.goblin.
+cRrx.81322.Goblin shaman.goblin.oS
+crx .b1101.Orc.orc
+cR  .d2101.Orc veteran.orc
+crX .d2201.Ogre baby.orc.K
+crXx.h2301.Ogre.orc.t
+cr  .81101.Dwarf eunuch.dwarf.z
+cr  .81201.Dwarf cadet.dwarf
+crx .a1201.Dwarf.dwarf
+cRx .a2301.Dwarf veteran.dwarf
+cRX .a3401.Dwarf hero.dwarf
+
+cb  .a0101.Will-o-the-wisp.ghost.f;ab,regen
+cbx .a1101.Skeleton.undead.;ab,regen
+cB  .a2202.Black knight.knight
+cBb .a2201.Ghoul.undead.z;o,ghoul
+cbX .a2301.Zombie.undead
+cBx .a2201.Wraith.ghost.e
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+zgf            .Cute spear .A1           .A1X{z}
+#type+manacost .name       .basic effect .kicker effect
+
+zuf.Cute harpoon  .A1.A1X{r}
+zrf.Cute dagger   .A1.A1X{p}
+zwf.Cute sabre    .A1.A1L1
+zbf.Cute claws    .A1.A1X{w}
+
+zgxf.Edged spear  .A1L1.A1L2
+zgxF.Sharp spear  .A1L1.A1L3
+zuxf.Edged harpoon.A1L1.A1L1X{n}
+zuxF.Sharp harpoon.A1L1.A1L1X{f}
+zrxf.Edged dagger .A1L1.A1L1X{p}
+zrxF.Sharp dagger .A1L1.A1L1X{pj}
+zwxf.Edged sabre  .A1L1.A1L2
+zwxF.Sharp sabre  .A1L1.A1L1D1
+zbxf.Edged claws  .A1L1.A1L1X{w}
+zbxF.Sharp claws  .A1L1.A1L1X{g}
+
+zGf.Iron pike     .A2.A2X{z}
+zGF.Bronze pike   .A2.A2D1H1
+zUf.Iron trident  .A2.A2X{r}
+zUF.Bronze trident.A2.A2X{f}
+zRf.Iron axe      .A2.A2X{p}
+zRF.Bronze axe    .A2.H1X{po}
+zWf.Iron sword    .A2.A2D1
+zWF.Bronze sword  .A2.A2D2
+zBf.Iron claws    .A2.A2X{g}
+zBF.Bronze claws  .A2.A2X{p}
+
+agp.Wooden buckler .D1.D1L1
+aup.Crystal buckler.D1.D1L1
+arp.Iron buckler   .D1.D1L1
+awp.Buckler        .D1.D1L2
+abp.Spider buckler .D1.D1L1
+
+agxp.Wooden shield .D1L1.D1L1X{z}
+agxP.Ebony shield  .D1L1.D1L2X{v}
+auxp.Crystal shield.D1L1.D1L1X{r}
+auxP.Naga shield   .D1L1.D1L1X{n}
+arxp.Iron shield   .D1L1.D1L1X{p}
+arxP.Bronze shield .D1L1.D1L2X{p}
+awxp.Shield        .D1L1.D1L2
+awxP.Great shield  .D1L1.D1L4
+abxp.Spider shield .D1L1.D1L1X{w}
+abxP.Scorpio shield.D1L1.D1L1X{wg}
+
+aGp.Thorn armor    .D1L1.D1L2
+aGP.Ebony armor    .D1L1.D2L2
+aRP.Bronze armor   .D1L1.D1L1M1
+aWp.Chain mail     .D1L1.D2
+aWP.Mithril mail   .D1L2.D2M1
+aBP.Scorpio armor  .D1L1.D1X{wgp}
+
+xgs.Web            .x{f}.m1x{f}
+xus.Unsummon       .;x,unsummon.;y,unsummon
+xrs.Magic arrow    .h4.h6
+xws.Healing salve  .H3.H5
+xbs.Black arrow    .h3.h5
+
+xgxs.Coffein       .;a,buff22.;a,buff33
+xgxS.Strength      .;a,buff22.;a,buff44
+xuxs.Reduce        .x{jpdgl}.x{jpdgloymvtx}
+xuxS.Simplify      .x{jpdgl}.x{bcdefghjlmnopqrstuvwxyz}
+xrxs.Strong arrow  .h5.h7
+xrxS.Stronger arrow.h5.h9
+xbxs.Pacify        .x{zx}.x{zwxbcs}
+
+xGs.Green arrow    .h4.h6
+xGS.Green missile  .h4.h8
+xUS.Evacuate       .;y,unsummon.;z,unsummon
+xRs.Lightning bolt .ha.hc
+xRS.Strong bolt    .ha.he
+xWS.Healing potion .H5.;o.heal5
+xBs.Weakness       .a1.a1d1
+xBS.Terror         .a2.a2d1

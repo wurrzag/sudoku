@@ -1,0 +1,72 @@
+# card types:
+# creature, sorcery, instant, interrupt, building, armor, weapon, wall, hero
+# c         s        i        r          b         a      z       w     h
+
+# abilities:
+# worker, native-walk, firststrike, flying, slowstrike, haste, vigilance, trample,
+# z       n            1            f       2           h      v          t        
+# wall-crusher, provoke, flanking, immune (to magic), fear, poisonous, sniper, healer, decoy
+# w             p        l         i                  e     q          s       o       d    
+
+# abcdgjkmruxy
+
+cg             .51101                                 .Llanovar elf    .elf       .nz                              @ core forest unit. useful to harvest some wood    
+#type+manacost .life-attack-defense-shooting-movement .name            .sub-type (.abilities) ;(special abilities) @ description
+#              .use a-j for 10-19 and A-J for 20-29
+
+cg  .51111.Fyndhorn elf.elf.n @ all time rivals of Llanovar elves but don't worry, they are able to cooperate in times of war
+cgx .a2201.Grizzly bears.bear @ nice and cute little bears
+cG  .81121.Elven scout.elf.n
+cGg .a1131.Elven sniper.elf.ns
+cG  .c2201.Elvish infantry.elf
+cGX .f2421.Elvish veterans.elf
+cgx .81102.Sprite.elf.f
+cGXx.A5301.Krosan tusker.beast
+cGGX.A5301.Krosan berserker.beast.tp
+
+cu  .a1101.Merfolk soldier.merfolk.n
+cux .81101.Merfolk trader.merfolk.nz
+cux .a1301.Giant crab.octopus
+cuX .a1501.Giant turtle.octopus.2
+cu  .81102.Gray eagle.bird.f
+cU  .a2102.Sea hawk.bird.f1
+cux .81202.Albatros.bird.fv
+cUx .a2102.Angry bird.bird.f1vsh
+cUux.a3103.Toxic faerie.bird.fq
+
+cw  .a1101.Swordsman.soldier.v
+cw  .80101.Combat medic.soldier.o
+cwx .81201.Banner bearer.soldier.dn
+cW  .a1202.Master decoy.soldier.dn
+cwx .a1201.Swordsman elite.soldier.v
+cwx .a1101.Slinger.soldier.s
+cwx .a0121.Bowman.soldier
+cW  .a0121.Longbowman.soldier.s
+cWx .a2202.Silver knight.knight.1v
+cW  .a2202.White knight.knight
+cWx .a2202.Shadow knight.knight.n
+cWX .a2303.Gepard rider.knight.1
+cWwx.a3302.Veteran knight.knight.1
+
+cr  .51101.Goblin scout.goblin.nh
+cr  .71101.Gray goblin.goblin.n
+cr  .71101.Green goblin.goblin.n
+cR  .81101.Goblin hero.goblin;+01100+goblin
+cRR .81301.Goblin shaman.goblin;*01100+goblin
+crx .b1101.Orc.orc
+cR  .d1101.Orc veteran.orc
+crX .b2201.Ogre baby.orc
+crXx.f2301.Ogre.orc.t
+cr  .51101.Dwarf Eunuch.dwarf.z
+cr  .51201.Dwarf cadet.dwarf
+crx .a1201.Dwarf.dwarf
+cRx .a2301.Dwarf veteran.dwarf
+cRX .a3401.Dwarf hero.dwarf
+
+cb  .20101.Will-o-the-wisp.ghost.f;regenb
+cbx .81101.Skeleton.undead;regenb
+cB  .a2202.Black knight.knight
+cBb .a2201.Ghoul.undead.z;ghoul
+cbX .a2301.Zombie.undead
+cBx .a2201.Wraith.undead.e
+

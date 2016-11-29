@@ -1,0 +1,13 @@
+0114g text BUTTON 1
+0126y text BUTTON 2
+0138l text BUTTON 3
+0150r text MOVEMENT ARROWS
+1503w text move way up (north) or down (south) from the battlefield
+1560y text to end your turn
+1704w text move left (home player) or right (away player)
+1751y text to see the cards on hand
+1905w text press ENTER at the main screen
+1937y text to browse all currently defined cards
+2105r text           press ESCAPE repeatedly to exit the program
+2205v text          any of function keys with code 27 will do that
+2305x text           including regular arrow keys unfortunatelly

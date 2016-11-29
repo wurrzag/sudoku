@@ -1,0 +1,20 @@
+0102r text                         THIS IS OMEGA VERSION !!!
+
+0402y text properly working stuff:
+0502w text   - evaluating the manacost of card and playing it (if it is a creature)
+0602w text   - movement feature including movement types (flying, swampwalk, ...)
+0702w text   - the whole system of drawing the screen (and 'animation')
+0802w text   - the Table is not flawless but pretty cool anyway
+
+1102y text closely todo things:
+1202w text   - can't play any other than creature cards
+1302w text   - the fight feature was done in 2 minutes and it looks like that
+1402w text   - healing, resource managing (gold, wood, food)
+  
+1702y text far from being ok:
+1802w text   - no meaning of archery or any of 30 predefined skills yet
+1902w text   - little cards defined alltogether and their values are widely nonsensable
+2002w text   - all the other game concepts (buildings, landsearch, library, ...)
+
+2312l text press any NORMAL key please
+2343b text (nothing with code 27)
