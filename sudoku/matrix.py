@@ -1,3 +1,5 @@
+from copy import deepcopy
+
 class Zweiboard:
   def __init__(self, matrix = [], shadow = []):
     self.board = [[0] * 9 for _ in range(9)] # array of integers as a board
@@ -8,6 +10,9 @@ class Zweiboard:
     for i in range(81): self.board[i//9][i%9] = board[i//9][i%9]
     if len(shadow):
       for i in range(81): self.shadow[i//9][i%9] = shadow[i//9][i%9]
+      
+  def get_board(self): return deepcopy(self.board)
+  def get_shadow(self): return deepcopy(self.shadow)
     
   def row(self, row): return self.board[row]
   def column(self, col): return [row[col] for row in self.board]
@@ -88,15 +93,16 @@ class Zweiboard:
 
   __load = load
   
+class Zweiboard_cut():
+  def __init__(self, b, s):
+    self.bd = deepcopy(b); self.sh = deepcopy(s)
   
 class Stack_of_boards: # class necessary for proper work of paths.try_branches()
   def __init__(self): self.stack = []
-  def add(self, board): self.stack += [board]
-  def ret(self): return self.stack
+  def push(self, board, shadow):
+    self.stack.append(Zweiboard_cut(board, shadow))
   def length(self): return len(self.stack)
-  def get(self):
-    if self.length():
-      last = self.stack[-1]; self.stack = self.stack[:-1]
-      return last
-    return False
+  def pop(self):
+    if self.length(): return self.stack.pop()      
+    return []
 
